@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "9d8c60cc-10cc-4c5a-ba19-c61447e2294b",
+		"name": "PoolProofParser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26965511"
+	},
+	"item": [
+		{
+			"name": "Get Messages by Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/messages/by_date?date=2024-03-10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"by_date"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-03-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/messages/all",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"messages",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get last n Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/messages?n=5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Messages(Auto, Periodic)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/fetch_channel",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"fetch_channel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

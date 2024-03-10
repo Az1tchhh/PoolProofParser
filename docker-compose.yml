@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: db
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg:/var/lib/postgresql/data
+  django:
+    container_name: django-container
+    image: az1tchhh/docker_aza:my_django
+    restart: always
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+    - "8000:8000"
+  spring:
+    container_name: spring-container
+    image: az1tchhh/docker_aza:my_spring
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: postgres
+volumes:
+  pg:
